@@ -1,0 +1,14 @@
+﻿@model Store_of__goods.Entities.Cart
+
+<div class="navbar-right">
+    @Html.ActionLink("Просмотр", "Index", "Cart",
+    new { returnUrl = Request.Url.PathAndQuery },
+    new { @class = "btn btn-warning navbar-btn", @style = "font-size: 12px" })
+</div>
+
+<div class="navbar-text navbar-right">
+    Ваша корзина:
+    @Model.Lines.Sum(x => x.Quantity) вещей,
+    @Model.ComputeTotalValue().ToString("# руб")&nbsp; &nbsp;
+</div>
+

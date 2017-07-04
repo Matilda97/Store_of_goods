@@ -1,0 +1,74 @@
+﻿@model Store_of__goods.WAR_FAS_IMAGE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WAR_FAS_IMAGE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

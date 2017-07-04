@@ -1,0 +1,71 @@
+﻿@model PagedList.IPagedList<Store_of__goods.WAREHOUSE_DATA>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Имеющийся ассортимент<br>
+    @{ @Html.Label("", ViewBag.Current as string); }
+    </h2>
+<p>
+    @if (User.IsInRole("admin")) { @Html.ActionLink("Добавить вещь", "Create", null, new { @class = "btn btn-primary navbar-btn", @style = "font-size: 12px" }) }
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            Количество
+        </th>
+        <th>
+            Цвет
+        </th>
+        <th>
+            Рост
+        </th>
+        <th>
+            Размер
+        </th>
+        <th>
+            Фасон
+        </th>
+        <th>
+            Цена
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KOL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NCW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RZM_PRINT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGPR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNR)
+        </td>
+        <td>
+            @if (User.IsInRole("admin"))
+            { @Html.ActionLink("Изменить", "Edit", new { id = item.ID }, new { @class = "btn btn-default navbar-btn", @style = "font-size: 12px" }) }
+            @Html.ActionLink("Детали", "Details", new { id = item.ID }, new { @class = "btn btn-info navbar-btn", @style = "font-size: 12px" })
+            @if (User.IsInRole("admin"))
+            { @Html.ActionLink("Удалить", "Delete", new { id = item.ID }, new { @class = "btn btn-danger navbar-btn", @style = "font-size: 12px" }) }
+            @Html.ActionLink("В корзину", "AddToCart", "Cart", new { id = item.ID, returnUrl = Request.Url.PathAndQuery }, new { @class = "btn btn-success navbar-btn", @style = "font-size: 12px" })
+        </td>
+    </tr>
+}
+
+</table>
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, current = ViewBag.Current }))

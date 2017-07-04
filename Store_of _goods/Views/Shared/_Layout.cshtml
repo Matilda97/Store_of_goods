@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Главная", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Меню
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("О 8марта", "About", "Home")</li>
+                            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                            <li class="menu-item dropdown-submenu">
+                                @Html.ActionLink("Одежда", "Index", "WAREHOUSE_DATA")
+                                <ul class="dropdown-menu" style="">
+                                    <li>
+                                    <li class="menu-item dropdown-submenu">
+                                        @Html.ActionLink("Мужское", "Index", "WAREHOUSE_DATA", new { page = 1, category = "МУЖ"}, null)
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.ActionLink("Джемпера", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ДЖЕМПЕР МУЖ" }, null)
+                                                @Html.ActionLink("Фуфайки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ФУФАЙКА МУЖ" }, null)
+                                                @Html.ActionLink("Майки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "МАЙКА МУЖ" }, null)
+                                                @Html.ActionLink("Кальсоны", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КАЛЬСОНЫ МУЖ" }, null)
+                                                @Html.ActionLink("Нижние мужские брюки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРЮКИ НИЖНИЕ МУЖ." }, null)
+                                                @Html.ActionLink("Спортивные брюки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРЮКИ СПОРТ. МУЖ" }, null)
+                                                @Html.ActionLink("Плавки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТРУСЫ КУПАЛЬНЫЕ МУЖ" }, null)
+                                                @Html.ActionLink("Нижнее белье", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТРУСЫ МУЖ" }, null)
+                                                @Html.ActionLink("Носки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "НОСКИ МУЖ" }, null)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item dropdown-submenu">
+                                        @Html.ActionLink("Женское", "Index", "WAREHOUSE_DATA", new { page = 1, category = "ЖЕН" }, null)
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.ActionLink("Джемпера", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ДЖЕМПЕР ЖЕН" }, null)
+                                                @Html.ActionLink("Блузки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БЛУЗКА" }, null)
+                                                @Html.ActionLink("Пижамы", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПИЖАМА ЖЕН" }, null)
+                                                @Html.ActionLink("Бриджи", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРИДЖИ" }, null)
+                                                @Html.ActionLink("Платья", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПЛАТЬЕ ЖЕН" }, null)
+                                                @Html.ActionLink("Ночные сорочки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "СОРОЧКА НОЧНАЯ ЖЕН." }, null)
+                                                @Html.ActionLink("Легинсы", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ЛЕГИНСЫ" }, null)
+                                                @Html.ActionLink("Шорты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ШОРТЫ ЖЕН" }, null)
+                                                @Html.ActionLink("Носки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "НОСКИ ЖЕН" }, null)
+                                                @Html.ActionLink("Майки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "МАЙКА ЖЕН" }, null)
+                                                @Html.ActionLink("Спортивные брюки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРЮКИ СПОРТ  ЖЕН." }, null)
+                                                @Html.ActionLink("Фуфайки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ФУФАЙКА ЖЕН" }, null)
+                                                @Html.ActionLink("Нижнее белье", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТРУСЫ ЖЕН" }, null)
+                                                @Html.ActionLink("Комплекты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КОМПЛЕКТ ЖЕН" }, null)
+                                                @Html.ActionLink("Халаты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ХАЛАТ ЖЕН" }, null)
+                                                @Html.ActionLink("Панталоны", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПАНТАЛОНЫ ЖЕН" }, null)
+                                                @Html.ActionLink("Капри", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КАПРИ ЖЕН" }, null)
+                                                @Html.ActionLink("Халаты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ХАЛАТ ЖЕН" }, null)
+                                                @Html.ActionLink("Туники", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТУНИКА ЖЕН" }, null)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item dropdown-submenu">
+                                        @Html.ActionLink("Мальчиковое", "Index", "WAREHOUSE_DATA", new { page = 1, category = "МАЛ" }, null)
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.ActionLink("Нижнее белье", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТРУСЫ МАЛ" }, null)
+                                                @Html.ActionLink("Майки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "МАЙКА МАЛ" }, null)
+                                                @Html.ActionLink("Джемпер", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ДЖЕМПЕР МАЛ" }, null)
+                                                @Html.ActionLink("Комплекты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КОМПЛЕКТ МАЛ" }, null)
+                                                @Html.ActionLink("Пижамы", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПИЖАМА МАЛ" }, null)
+                                                @Html.ActionLink("Спортивные костюмы", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КОСТЮМ СПОРТ. МАЛ" }, null)
+                                                @Html.ActionLink("Брюки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРЮКИ МАЛ" }, null)
+                                                @Html.ActionLink("Нижние брюки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРЮКИ НИЖНИЕ МАЛ" }, null)
+                                                @Html.ActionLink("Бриджи", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРИДЖИ МАЛ" }, null)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item dropdown-submenu">
+                                        @Html.ActionLink("Девичье", "Index", "WAREHOUSE_DATA", new { page = 1, category = "ДЕВ" }, null)
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.ActionLink("Джемпера", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ДЖЕМПЕР ДЕВ" }, null)
+                                                @Html.ActionLink("Блузки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БЛУЗКА ДЕВ" }, null)
+                                                @Html.ActionLink("Пижамы", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПИЖАМА ДЕВ" }, null)
+                                                @Html.ActionLink("Бриджи", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРИДЖИ ДЕВ" }, null)
+                                                @Html.ActionLink("Платья", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПЛАТЬЕ ДЕВ" }, null)
+                                                @Html.ActionLink("Ночные сорочки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "СОРОЧКА НОЧНАЯ ДЕВ" }, null)
+                                                @Html.ActionLink("Шорты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ШОРТЫ ДЕВ" }, null)
+                                                @Html.ActionLink("Носки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "НОСКИ ДЕВ" }, null)
+                                                @Html.ActionLink("Майки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "МАЙКА ДЕВ" }, null)
+                                                @Html.ActionLink("Спортивные брюки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "БРЮКИ СПОРТ  ДЕВ" }, null)
+                                                @Html.ActionLink("Фуфайки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ФУФАЙКА ДЕВ" }, null)
+                                                @Html.ActionLink("Нижнее белье", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТРУСЫ ДЕВ" }, null)
+                                                @Html.ActionLink("Комплекты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КОМПЛЕКТ ДЕВ" }, null)
+                                                @Html.ActionLink("Халаты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ХАЛАТ ДЕВ" }, null)
+                                                @Html.ActionLink("Панталоны", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПАНТАЛОНЫ ДЕВ" }, null)
+                                                @Html.ActionLink("Капри", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КАПРИ ДЕВ" }, null)
+                                                @Html.ActionLink("Халаты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ХАЛАТ ДЕВ" }, null)
+                                                @Html.ActionLink("Туники", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТУНИКА ДЕВ" }, null)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item dropdown-submenu">
+                                        @Html.ActionLink("Детское", "Index", "WAREHOUSE_DATA", new { page = 1, category = "ДЕТ" }, null)
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.ActionLink("Нижнее белье", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ТРУСЫ ДЕТ" }, null)
+                                                @Html.ActionLink("Фуфайки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ФУФАЙКА ДЕТ" }, null)
+                                                @Html.ActionLink("Колготки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КОЛГОТКИ ДЕТСКИЕ" }, null)
+                                                @Html.ActionLink("Носки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "НОСКИ ДЕТ" }, null)
+                                                @Html.ActionLink("Жакеты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ЖАКЕТ ДЕТ" }, null)
+                                                @Html.ActionLink("Получулки", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПОЛУЧУЛКИ ДЕТ" }, null)
+                                                @Html.ActionLink("Полукомбинезоны", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "ПОЛУКОМБИНЕЗОН ДЕТ" }, null)
+                                                @Html.ActionLink("Кофты", "Index", "WAREHOUSE_DATA",
+                                                                          new { page = 1, category = "КОФТОЧКА ДЕТ" }, null)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    </ul>
+                            </li>
+
+                        </ul>
+                        
+                    </li>
+                           <li>@if (User.IsInRole("user") || User.IsInRole("admin"))
+                           { @Html.Action("Summary", "Cart");
+                           }</li>
+                        </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

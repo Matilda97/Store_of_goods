@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище GoodsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="WAR_FAS_IMAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FAS" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="IMAGE_1" Type="image" />
+          <Property Name="IMAGE_2" Type="image" />
+          <Property Name="IMAGE_3" Type="image" />
+          <Property Name="IMAGE_4" Type="image" />
+          <Property Name="IMAGE_5" Type="image" />
+          <Property Name="NOTE" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="WAREHOUSE_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WAREHOUSE_MAIN_ID" Type="bigint" Nullable="false" />
+          <Property Name="KOD_IZD" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="KOL" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="NCW" Type="char" MaxLength="15" />
+          <Property Name="RST" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="RZM" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="RZM_PRINT" Type="char" MaxLength="27" />
+          <Property Name="SRT" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="NOT1" Type="char" MaxLength="15" />
+          <Property Name="MASSA" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="CNP" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="CNO" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="CNR" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="CNV" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="NDS" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="EAN" Type="char" MaxLength="13" />
+          <Property Name="KOD" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="SAR" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="NAR" Type="char" MaxLength="10" />
+          <Property Name="NGPR" Type="char" MaxLength="45" />
+          <Property Name="BREND" Type="char" MaxLength="25" />
+          <Property Name="KOMPLEKT" Type="char" MaxLength="25" />
+          <Property Name="FAS" Type="numeric" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="WAREHOUSE_MAIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="CALCULATION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="NOTE" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__WAREHOUSE__WAREH__1273C1CD">
+          <End Role="WAREHOUSE_MAIN" Type="Self.WAREHOUSE_MAIN" Multiplicity="1" />
+          <End Role="WAREHOUSE_DATA" Type="Self.WAREHOUSE_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WAREHOUSE_MAIN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WAREHOUSE_DATA">
+              <PropertyRef Name="WAREHOUSE_MAIN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище GoodsModelContainer">
+          <EntitySet Name="WAR_FAS_IMAGE" EntityType="Self.WAR_FAS_IMAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WAREHOUSE_DATA" EntityType="Self.WAREHOUSE_DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WAREHOUSE_MAIN" EntityType="Self.WAREHOUSE_MAIN" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__WAREHOUSE__WAREH__1273C1CD" Association="Self.FK__WAREHOUSE__WAREH__1273C1CD">
+            <End Role="WAREHOUSE_MAIN" EntitySet="WAREHOUSE_MAIN" />
+            <End Role="WAREHOUSE_DATA" EntitySet="WAREHOUSE_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GoodsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="WAR_FAS_IMAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FAS" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="IMAGE_1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IMAGE_2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IMAGE_3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IMAGE_4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IMAGE_5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WAREHOUSE_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WAREHOUSE_MAIN_ID" Type="Int64" Nullable="false" />
+          <Property Name="KOD_IZD" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="KOL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NCW" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="RST" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="RZM" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="RZM_PRINT" Type="String" MaxLength="27" FixedLength="true" Unicode="false" />
+          <Property Name="SRT" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="NOT1" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="MASSA" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="CNP" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="CNO" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="CNR" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="CNV" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="NDS" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="EAN" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="KOD" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="SAR" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="NAR" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NGPR" Type="String" MaxLength="45" FixedLength="true" Unicode="false" />
+          <Property Name="BREND" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="KOMPLEKT" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="FAS" Type="Decimal" Precision="6" Scale="0" />
+          <NavigationProperty Name="WAREHOUSE_MAIN" Relationship="Self.FK__WAREHOUSE__WAREH__1273C1CD" FromRole="WAREHOUSE_DATA" ToRole="WAREHOUSE_MAIN" />
+        </EntityType>
+        <EntityType Name="WAREHOUSE_MAIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CALCULATION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NOTE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="WAREHOUSE_DATA" Relationship="Self.FK__WAREHOUSE__WAREH__1273C1CD" FromRole="WAREHOUSE_MAIN" ToRole="WAREHOUSE_DATA" />
+        </EntityType>
+        <Association Name="FK__WAREHOUSE__WAREH__1273C1CD">
+          <End Role="WAREHOUSE_MAIN" Type="Self.WAREHOUSE_MAIN" Multiplicity="1" />
+          <End Role="WAREHOUSE_DATA" Type="Self.WAREHOUSE_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WAREHOUSE_MAIN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WAREHOUSE_DATA">
+              <PropertyRef Name="WAREHOUSE_MAIN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GoodsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="WAR_FAS_IMAGE" EntityType="Self.WAR_FAS_IMAGE" />
+          <EntitySet Name="WAREHOUSE_DATA" EntityType="Self.WAREHOUSE_DATA" />
+          <EntitySet Name="WAREHOUSE_MAIN" EntityType="Self.WAREHOUSE_MAIN" />
+          <AssociationSet Name="FK__WAREHOUSE__WAREH__1273C1CD" Association="Self.FK__WAREHOUSE__WAREH__1273C1CD">
+            <End Role="WAREHOUSE_MAIN" EntitySet="WAREHOUSE_MAIN" />
+            <End Role="WAREHOUSE_DATA" EntitySet="WAREHOUSE_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище GoodsModelContainer" CdmEntityContainer="GoodsEntities">
+          <EntitySetMapping Name="WAR_FAS_IMAGE">
+            <EntityTypeMapping TypeName="GoodsModel.WAR_FAS_IMAGE">
+              <MappingFragment StoreEntitySet="WAR_FAS_IMAGE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAS" ColumnName="FAS" />
+                <ScalarProperty Name="IMAGE_1" ColumnName="IMAGE_1" />
+                <ScalarProperty Name="IMAGE_2" ColumnName="IMAGE_2" />
+                <ScalarProperty Name="IMAGE_3" ColumnName="IMAGE_3" />
+                <ScalarProperty Name="IMAGE_4" ColumnName="IMAGE_4" />
+                <ScalarProperty Name="IMAGE_5" ColumnName="IMAGE_5" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WAREHOUSE_DATA">
+            <EntityTypeMapping TypeName="GoodsModel.WAREHOUSE_DATA">
+              <MappingFragment StoreEntitySet="WAREHOUSE_DATA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WAREHOUSE_MAIN_ID" ColumnName="WAREHOUSE_MAIN_ID" />
+                <ScalarProperty Name="KOD_IZD" ColumnName="KOD_IZD" />
+                <ScalarProperty Name="KOL" ColumnName="KOL" />
+                <ScalarProperty Name="NCW" ColumnName="NCW" />
+                <ScalarProperty Name="RST" ColumnName="RST" />
+                <ScalarProperty Name="RZM" ColumnName="RZM" />
+                <ScalarProperty Name="RZM_PRINT" ColumnName="RZM_PRINT" />
+                <ScalarProperty Name="SRT" ColumnName="SRT" />
+                <ScalarProperty Name="NOT1" ColumnName="NOT1" />
+                <ScalarProperty Name="MASSA" ColumnName="MASSA" />
+                <ScalarProperty Name="CNP" ColumnName="CNP" />
+                <ScalarProperty Name="CNO" ColumnName="CNO" />
+                <ScalarProperty Name="CNR" ColumnName="CNR" />
+                <ScalarProperty Name="CNV" ColumnName="CNV" />
+                <ScalarProperty Name="NDS" ColumnName="NDS" />
+                <ScalarProperty Name="EAN" ColumnName="EAN" />
+                <ScalarProperty Name="KOD" ColumnName="KOD" />
+                <ScalarProperty Name="SAR" ColumnName="SAR" />
+                <ScalarProperty Name="NAR" ColumnName="NAR" />
+                <ScalarProperty Name="NGPR" ColumnName="NGPR" />
+                <ScalarProperty Name="BREND" ColumnName="BREND" />
+                <ScalarProperty Name="KOMPLEKT" ColumnName="KOMPLEKT" />
+                <ScalarProperty Name="FAS" ColumnName="FAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WAREHOUSE_MAIN">
+            <EntityTypeMapping TypeName="GoodsModel.WAREHOUSE_MAIN">
+              <MappingFragment StoreEntitySet="WAREHOUSE_MAIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="CALCULATION_DATE" ColumnName="CALCULATION_DATE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

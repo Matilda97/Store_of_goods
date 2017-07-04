@@ -1,0 +1,201 @@
+﻿@model Store_of__goods.WAREHOUSE_DATA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KOD_IZD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOD_IZD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NCW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NCW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RZM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RZM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RZM_PRINT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RZM_PRINT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SRT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SRT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOT1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOT1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MASSA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MASSA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NDS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NDS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGPR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGPR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BREND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BREND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOMPLEKT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOMPLEKT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WAREHOUSE_MAIN.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WAREHOUSE_MAIN.NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменение", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Вернуться", "Index")
+</p>

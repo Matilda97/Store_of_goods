@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Store_of__goods.WAR_FAS_IMAGE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMAGE_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMAGE_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMAGE_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMAGE_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMAGE_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOTE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMAGE_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMAGE_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMAGE_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMAGE_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMAGE_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOTE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
